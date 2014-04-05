@@ -6,16 +6,60 @@
 ### 条件付きchatch文
 
 ```javascript
-
-
-catch (e if e instanceof TypeError)
-
+  catch (e if e instanceof TypeError)
 ```
 
 
-### 関数式クロージャ(JavaScript1.8拡張)
+### 関数式クロージャ(JavaScript 1.8)
+
+```javascript
+  var fnc = function(x) x+x
+  print(fnc(10));
+```
+
 
 [JavaScript1.8](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/1.8)
+
+[JavaScript1.8日本語](https://developer.mozilla.org/ja/docs/Web/JavaScript/New_in_JavaScript/1.8)
+
+MozillaのJavaScript1.8拡張もNashornでサポートされています。
+
+※  でも安易ジェネレータ式はサポートされてない、そもそも1.7サポートされてない・・・（だから安易ジェネレータ式未サポート？）
+
+
+### for each(JavaScript 1.6)
+
+JavaScript 1.6拡張の[for each式](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/for_each...in)が使えます。
+
+
+### 最後の引数の")"の後に当たらしい式を定義できる。
+
+Objectの定義とともに新しく中身を作れたりする。
+主に匿名クラスっぽいものを作るために使えたりする。
+
+```javascript
+var obj = new Object(){
+    run: function(){ console.log("run"); }
+};
+obj.run();
+```
+
+### 無名関数
+
+```javascript
+function(){
+    print("hello");
+}
+```
+
+使い方は以下のような感じ、Nashornでは実行できる。
+ブラウザでは落ちる。
+
+```javascript
+var script = "function(){ print('Allo'); }";
+var fnc = eval(script);
+fnc();
+```
 
 
 
