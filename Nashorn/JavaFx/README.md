@@ -1,4 +1,3 @@
-
 # JavaFX and Nashorn
 
 
