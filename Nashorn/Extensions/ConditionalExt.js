@@ -1,12 +1,10 @@
 
-// Conditional catch clauses
+print('拡張catch文');
 try {
-    print('X-X' + "String".forEach());
+    print("String".forEach());
 } catch (e if e instanceof TypeError) {
     print('TypeError');
 } catch (e) {
     print('error');
 }
-
-
 
