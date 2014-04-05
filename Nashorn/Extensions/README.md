@@ -3,6 +3,8 @@
 
 [ECMAScript5.1 Spec](http://www.ecma-international.org/ecma-262/5.1/)
 
+[独自拡張内容(英語)](https://wiki.openjdk.java.net/display/Nashorn/Nashorn+extensions)
+
 ### 条件付きchatch文
 
 ```javascript
@@ -62,4 +64,26 @@ fnc();
 ```
 
 
+ + javaからした場合どうやって呼び出すか調査中・・・
+
+### 複数行記述(-scriptingモードのみ)
+
+```javascript
+var str = <<EOF
+
+ This is a string that contains multiple lines
+ hello
+ world
+ That's all!
+
+EOF
+
+print(str)
+```
+
+実行する際は「-scripting」オプションが必要
+
+```javascript
+jjs -scripting xxx.js
+```
 
