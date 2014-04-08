@@ -1,4 +1,3 @@
-
 ## Nashorn がECMAScript5.1から追加した機能
 
 [ECMAScript5.1 Spec](http://www.ecma-international.org/ecma-262/5.1/)
@@ -141,6 +140,4 @@ if ('windows' === System.getProperty('sun.desktop')) {
 }
 
 ```
-
-
 
