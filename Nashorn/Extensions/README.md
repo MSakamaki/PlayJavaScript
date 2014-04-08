@@ -125,10 +125,10 @@ print (calc);
 var System  = Java.type("java.lang.System")
 if ('windows' === System.getProperty('sun.desktop')) {
 	print('windowsだと動かんぜよ');
-} else{
+} else {
 	var files = `ls -l`;
 
-	print(file);
+	print(files);
 	var lines = files.split("\n");
 	 
 	// print only the directories
@@ -140,4 +140,92 @@ if ('windows' === System.getProperty('sun.desktop')) {
 }
 
 ```
+
+### シェルスクリプト形式のコメント(-scriptingモードのみ)
+
+Nashornはshell scriptのコメント形式(``#``)をサポートしています。
+
+```javascript
+
+
+# コメント
+print('hello');
+
+```
+
+また、Nashornはshebangモードも対応しており、shebangモードの場合は自動的に``-scripting``が有効になります。
+
+
+```javascript
+
+
+#!/usr/bin/jjs
+# 
+# chmod 775 [ScriptFile]
+# ./[ScriptFile]
+#
+
+# check script mode
+var x = "World"
+var str = "Hello, ${x}"
+ 
+print(str) 
+
+
+# check back quate
+var System  = Java.type("java.lang.System")
+if ('windows' === System.getProperty('sun.desktop')) {
+	print('windowsだと動かんぜよ');
+} else {
+	var files = `ls -l`;
+
+	print(files);
+	var lines = files.split("\n");
+	 
+	// print only the directories
+	for (var l in lines) {
+	    var line = lines[l];
+	    if (line.startsWith("d")) // directory
+	        print(line)
+	}
+}
+
+
+```
+
+### 構文拡張機能の無効化
+
+Nashorn特有の構文拡張機能は``-no-syntax-extensions ``(短縮形で``-nse``)をオプションに設定することですべて無効化することができます。
+
+構文拡張機能をOffにした状態だと、ECMAScript5.1標準の構文のみサポートされるようになります。
+
+``-nse``モードは``-scripting``モードが自動的にoffになることにも注意して下さい。い
+
+Also note that API extensions are still enabled even nse is specified.
+
+
+## Nashorn script API extensions(Nashorn API拡張)
+
+### ``__proto__``プロパティーのサポート
+
+Nashornは他のECMAScriptエンジン(V8とかRhino)と同様に、指定されたオプジェクトのプロトタイプを読み書きするmutableプロパティー「``__proto__``」をサポートしています。
+
+#### _``__proto__``の使用は推奨されていません、代わりに``Object.getPrototypeOf``もしくは``Object.setPrototypeOf``を使用してください。_
+
+### Object.setPrototypeOf(obj, newProto)
+
+``Object.getPrototypeOf(obj)``は[ECMAScript5の仕様にある、Objectのプロトタイプを取得する機能](http://es5.github.io/#x15.2.3.2)です。
+
+このObject.setPrototypeOf(obj, newProto)は、Nashorn独自の拡張機能で、オブジェクトに``newProto``を設定することができます。
+
+この機能は[ECMAScript6ni6に提案](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)されている拡張機能の一つです。
+
+
+### 型指定された配列
+
+
+
+
+
+
 

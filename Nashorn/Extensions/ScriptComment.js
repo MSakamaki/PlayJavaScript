@@ -1,3 +1,13 @@
+#!/usr/bin/jjs
+
+# check script mode
+var x = "World"
+var str = "Hello, ${x}"
+ 
+print(str) 
+
+
+# check back quate
 var System  = Java.type("java.lang.System")
 if ('windows' === System.getProperty('sun.desktop')) {
 	print('windowsだと動かんぜよ');
@@ -14,3 +24,6 @@ if ('windows' === System.getProperty('sun.desktop')) {
 	        print(line)
 	}
 }
+
+
+
