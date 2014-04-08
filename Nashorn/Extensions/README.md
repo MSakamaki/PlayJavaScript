@@ -87,3 +87,62 @@ print(str)
 jjs -scripting xxx.js
 ```
 
+### 変数での文字列補完(-scriptingモードのみ)
+
+ + 文字列リテラル中には``${expression}``のような式を指定することができます。
+ + 文字列中の``${expression}``を変数で置き換えます。
+
+
+ ```javascript
+
+
+var x = 'world';
+print ('hello ${x}'); //--> hello ${x}
+
+var msg = "hello ${x}"; //--> hello world
+print (msg);
+
+var msg = "hello ${ x }"; //--> hello world
+print (msg);
+
+// 計算式は評価されない。
+var i = 10,
+	j = 5;
+
+print('calc : ${i+j}'); //--> calc : ${i+j}
+var calc = 'calc : ${i+j}';//--> calc : ${i+j}
+print (calc);
+
+ ```
+
+### バッククォート(`)を用いた評価式の実行(-scriptingモードのみ)
+
+ + NashornはUnixShellのようにバッククォート式をサポートしています。
+ + バッククォートに囲まれた式は``exec``プログラムにより評価されます。
+
+```javascript
+
+
+var System  = Java.type("java.lang.System")
+if ('windows' === System.getProperty('sun.desktop')) {
+	print('windowsだと動かんぜよ');
+} else{
+	var files = `ls -l`;
+
+	print(file);
+	var lines = files.split("\n");
+	 
+	// print only the directories
+	for (var l in lines) {
+	    var line = lines[l];
+	    if (line.startsWith("d")) // directory
+	        print(line)
+	}
+}
+
+```
+
+
+
+
+
