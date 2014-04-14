@@ -218,7 +218,7 @@ Nashornは他のECMAScriptエンジン(V8とかRhino)と同様に、指定され
 
 このObject.setPrototypeOf(obj, newProto)は、Nashorn独自の拡張機能で、オブジェクトに``newProto``を設定することができます。
 
-この機能は[ECMAScript6ni6に提案](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)されている拡張機能の一つです。
+この機能は[ECMAScript6に提案](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)されている拡張機能の一つです。
 
 
 ### 型指定された配列
