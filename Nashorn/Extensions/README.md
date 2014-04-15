@@ -226,6 +226,92 @@ Nashornは他のECMAScriptエンジン(V8とかRhino)と同様に、指定され
 
 
 
+### Object.bindProperties
+
+### Extensions of Error objects, Error.prototype and Error constructor
+
+### String.prototype extensions
+
+### Function.prototype.toSource
+
+
+### Extension properties, functions in global object
+
+
+#### __FILE__ , __LINE__, __DIR__
+
+#### print function
+
+#### load function
+
+#### loadWithNewGlobal function
+
+#### exit and quit functions
+
+#### Packages, java, javax, javafx, com, edu, org
+
+#### JavaImporter constructor
+
+
+
+### Java object
+
+"Java" global property is a script object that defines useful functions for script-to-Java interface.
+
+#### Java.type function
+
+#### Java.extend function
+
+#### Java.from function
+
+#### Java.to function
+
+#### Java.super function
+
+
+## Special treatment of objects of specific Java classes
+
+### Java Map keys as properties
+
+### Java List element access/update via array index access/update syntax
+
+### Lambdas, SAM types and Script functions
+
+#### Every function is a lambda and a SAM type object
+
+#### Every lambda is a script function
+
+### Script Proxy implementation
+
+
+### Plugging-in your own JSObject
+
+
+### JSAdapter constructor
+
+### Scripting mode extension objects and functions
+
+#### $ARG (-scripting mode only)
+
+#### echo (-scripting mode only)
+
+#### $ENV (-scripting mode only)
+
+#### $EXEC (-scripting mode only)
+
+#### $OUT (-scripting mode only)
+
+#### $ERR (-scripting mode only)
+
+#### $EXIT (-scripting mode only)
+
+#### $OPTIONS (-scripting mode only)
+
+#### readFully (-scripting mode only)
+
+#### readLine (-scripting mode only)
+
+
 
 
 
