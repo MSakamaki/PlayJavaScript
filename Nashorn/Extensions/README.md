@@ -221,12 +221,77 @@ Nashornは他のECMAScriptエンジン(V8とかRhino)と同様に、指定され
 この機能は[ECMAScript6に提案](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)されている拡張機能の一つです。
 
 
-### 型指定された配列
+### 型付き配列
 
+これはJavaScriptでバイナリデータのアクセスを可能にするための機能です。
 
+クロノスの[spec](https://www.khronos.org/registry/typedarray/specs/latest/)にある、Typed array(型付き配列)をNashornは実装します。
 
+詳しくは[tutorial presentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)をチェックして下さい。
+
+(この中にはStringViewなど、Nashornに実装されていない物もあります。)
+
+DataViewはまだ未実装であり、jdk8u20で実装を期待されている。
+
+#### 型付き配列の仕組み
+
+型付き配列は「buffer」と「View」に分離されており、bufferにてデータの塊です。
+
+bufferはそのままでは操作できず、アクセスする為にはViewを用います。
+
+##### bufferの定義
+
+以下の方法で16byteのbufferを定義します。
+
+```javascript
+var buffer = new ArrayBuffer(16);
+```
+
+##### viewでのアクセス
+
+配列を値 0, 2, 4, 6 の 4つのエントリ (4 つのエントリが各 4 バイトで、合計 16 バイト) で埋めるサンプル
+
+```javascript
+var int32View = new Int32Array(buffer);
+for (var i=0; i<int32View.length; i++) {
+  int32View[i] = i*2;
+}
+```
 
 ### Object.bindProperties
+
+オブジェクト同士をバインドします。
+
+バインドするオブジェクトはjavascriptオブジェクトである必要はなく、通常のjavaオブジェクトともバインドが加能です。
+
+
+```javascript
+
+
+print("prev bind obj :",obj.foo);  // undefined
+print("prev bund obj2:",obj2.foo); // 344
+
+// objobj2をバインドする。
+Object.bindProperties(obj, obj2);
+
+print("after bind obj :",obj.foo);  // 344
+print("after bund obj2:",obj2.foo); // 344
+obj.foo = "hello"
+print("set obj.foo 'hello' bind obj :",obj.foo);  // hello
+print("set obj.foo 'hello' bund obj2:",obj2.foo); // hello
+
+// グローバル領域にバインド
+Object.bindProperties(this, obj2);
+
+print("global bind this:",foo);      // hello
+print("global bind obj :",obj.foo);  // hello
+print("global bund obj2:",obj2.foo); // hello
+foo = 42; 
+print("set global foo='42' this:",foo);      // 42
+print("set global foo='42' obj :",obj.foo);  // 42
+print("set global foo='42' obj2:",obj2.foo); // 42
+
+```
 
 ### Extensions of Error objects, Error.prototype and Error constructor
 
@@ -238,7 +303,7 @@ Nashornは他のECMAScriptエンジン(V8とかRhino)と同様に、指定され
 ### Extension properties, functions in global object
 
 
-#### __FILE__ , __LINE__, __DIR__
+#### ``__FILE__`` , ``__LINE__``, ``__DIR__``
 
 #### print function
 
