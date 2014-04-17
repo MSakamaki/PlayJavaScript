@@ -2,8 +2,25 @@
 
 [CommonJS Wiki](http://wiki.commonjs.org/wiki/CommonJS)
 
+## CommonJSを取り巻く環境のメモ
 
-## [Modules](http://wiki.commonjs.org/wiki/Modules)
+### サーバサイドJavaScriptの関係者たち
+
+|名前|層|基盤|ソース|概要|
+|:---|:---|:---|:---|:---|
+|[SpiderMonkey](http://www.mozilla-japan.org/js/spidermonkey/) |engine|c|[src](http://lxr.mozilla.org/mozilla/source/js/src/)|世界初のＪＳエンジン|
+|[google v8](http://code.google.com/p/v8/)|engine|c++|[src](http://code.google.com/p/v8/source/browse)||
+|[Rhino](https://developer.mozilla.org/ja/docs/Rhino)|engine|Java|[src](http://lxr.mozilla.org/mozilla/source/js/rhino/)|J2SE6のデフォルトJavaScript Engine|
+|[Nashorn](http://openjdk.java.net/projects/nashorn/)|engine|JVM|[src](http://hg.openjdk.java.net/nashorn/jdk8/)|J2SE8からのデフォルトJavaScript Engine|
+|[Node.js](http://nodejs.org/)|FrameWork|C++(google V8)|[src](https://github.com/joyent/node)||
+|[RingoJS](http://ringojs.org/)|FrameWork|JVM(Rhino)|[src](https://github.com/ringo/ringojs)||
+|[Vert.x](http://vertx.io/)|FrameWork|JVM(Rhino)|[src](https://github.com/eclipse/vert.x)||
+
+ + さらに詳しい情報は[wiki](http://en.wikipedia.org/wiki/Comparison_of_server-side_JavaScript_solutions)にあったり
+
+## CommonJS Spec
+
+### [Modules](http://wiki.commonjs.org/wiki/Modules)
 
 |モジュール|概要|
 |:--|:--|
@@ -19,8 +36,8 @@
 |console|console (proposal) |
 
 
-## Packages (1.0)
-## Package Mappings (proposal)
-## Web Server Gateway Interface (JSGI) (proposals, discussion, early implementations)
-## Promises (proposal) 
+### Packages (1.0)
+### Package Mappings (proposal)
+### Web Server Gateway Interface (JSGI) (proposals, discussion, early implementations)
+### Promises (proposal) 
 
