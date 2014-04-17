@@ -17,6 +17,7 @@
 |[Vert.x](http://vertx.io/)|FrameWork|JVM(Rhino)|[src](https://github.com/eclipse/vert.x)||
 
  + さらに詳しい情報は[wiki](http://en.wikipedia.org/wiki/Comparison_of_server-side_JavaScript_solutions)にあったり
+ + [vert.xのnashornについて](https://groups.google.com/forum/#!searchin/vertx/nashorn/vertx/Ikv8YJNL21o/HD9dxFaYAMgJ)は[こちらのモジュール](https://github.com/vert-x/mod-lang-nashorn)が担当、coffeeScriptが動作したりする。
 
 ## CommonJS Spec
 
