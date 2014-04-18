@@ -92,7 +92,7 @@ jjs -scripting xxx.js
  + 文字列中の``${expression}``を変数で置き換えます。
 
 
- ```javascript
+```javascript
 
 
 var x = 'world';
@@ -112,7 +112,7 @@ print('calc : ${i+j}'); //--> calc : ${i+j}
 var calc = 'calc : ${i+j}';//--> calc : ${i+j}
 print (calc);
 
- ```
+```
 
 ### バッククォート(`)を用いた評価式の実行(-scriptingモードのみ)
 
