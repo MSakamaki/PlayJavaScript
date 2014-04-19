@@ -4,3 +4,6 @@ print('__LINE__', __LINE__)
 print('__DIR__ ', __DIR__)
 
 
+load("hello.js");
+
+
