@@ -365,7 +365,7 @@ public class bindJavaJS {
 
 ### Errorのオブジェクト、prototype、constructor拡張 (Extensions of Error objects, Error.prototype and Error constructor)
 
-NashornはECMAScriptに定義されているErrorオブジェクト(またはサブタイプ)を独自拡張しています。
+NashornはECMAScriptに定義されているErrorオブジェクト(またはサブタイプ)を拡張しています。
 
 |properties|説明|
 |:---|:---|
@@ -408,18 +408,73 @@ try {
 ```
 
 
-
 ### String.prototype extensions
+
+|機能|説明|
+|:---|:---|
+|String.prototype.trimLeft |文字列の左端から空白とタブを除去します。|
+|String.prototype.trimRight|文字列の右端から空白とタブを除去します。|
+
+```javascript
+var fnc = function(args){
+    print('args         [' + args + ']');
+    print('argsTrim     [' + args.trim() + ']');
+    print('argsTrimLeft [' + args.trimLeft() + ']');
+    print('argsTrimRight[' + args.trimRight() + ']');
+}
+
+fnc(" A ");
+fnc("　あ　");
+fnc("	TAB	");
+```
+
 
 ### Function.prototype.toSource
 
+functionのソースを表示します。
+Nativeの場合は表示されません。
+JavaTypeに対して行った場合は例外が発生します。
 
-### Extension properties, functions in global object
+```javascript
+// bindJavaJSを使いまわす。
+var bjjType= Java.type("nashorn.bindJavaJS")
+   ,bjj = new bjjType()
+   ,myFnc= function(){ print('hello'); };
+
+bjj.show()
+
+print('my function : ', myFnc.toSource());
+print('native function : ', print.toSource());
+
+try{
+    bjj.show();
+    print("java functionは呼べる");
+    print('java function : ', bjj.show.toSource());
+} catch(e) {
+    print('JavaではToSource()できない');
+    e.printStackTrace();
+}
+```
+
+### 拡張されたグローバルオブジェクト（ファンクション、プロパティ）(Extension properties, functions in global object)
 
 
-#### ``__FILE__`` , ``__LINE__``, ``__DIR__``
+|機能|タイプ|概要|
+|:---|:---|:---|
+|``__FILE__``|properties|実効ファイル名を取得します|
+|``__LINE__``|properties|実行された現在の行数を取得します|
+|``__DIR__`` |properties|実行されたファイルの絶対パスを返します|
+|``print()`` |function()|標準出力を出力します。|
+|``load()``|||
+|````|||
+|````|||
+|````|||
+|````|||
+|````|||
+|````|||
 
-#### print function
+
+
 
 #### load function
 
