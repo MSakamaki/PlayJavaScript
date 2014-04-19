@@ -293,6 +293,72 @@ print("set global foo='42' obj2:",obj2.foo); // 42
 
 ```
 
+以下はJavaオブジェクトをbindするサンプルです。
+実効は「jjs -cp ./ ファイル名」のようにクラスパスを通します。
+
+```javascript
+
+var myclass = Java.type("nashorn.bindJavaJS")
+   ,bjj = new myclass()
+   ,obj ={};
+
+print("show init");
+bjj.show();
+bjj.add(10);
+bjj.show();
+print("show bjj private : ",bjj.count);
+
+print("show bjj memory : ", bjj);
+print("show obj memory : ", obj);
+
+print("bjj binding obj");
+Object.bindProperties(obj, bjj);
+
+print("show bjj memory : ", bjj);
+print("show obj memory : ", obj);
+
+print("before obj add");
+obj.show();
+bjj.show();
+
+obj.add(10);
+print("after obj add");
+obj.show();
+bjj.show();
+
+
+print("before bjj add");
+obj.show();
+bjj.show();
+
+obj.add(10);
+print("after bjj add");
+obj.show();
+bjj.show();
+
+
+print("show obj private : ", obj.count);
+
+```
+
+
+```java
+package nashorn;
+
+public class bindJavaJS {
+    
+    private int count = 0;
+    
+    public void show(){
+        System.out.println("count:" + this.count);
+    }
+    public void add(int cnt){
+        this.count += cnt;
+    }
+}
+```
+
+
 ### Extensions of Error objects, Error.prototype and Error constructor
 
 ### String.prototype extensions
