@@ -296,6 +296,8 @@ print("set global foo='42' obj2:",obj2.foo); // 42
 以下はJavaオブジェクトをbindするサンプルです。
 実効は「jjs -cp ./ ファイル名」のようにクラスパスを通します。
 
+javascriptソース
+
 ```javascript
 
 var myclass = Java.type("nashorn.bindJavaJS")
@@ -341,6 +343,8 @@ print("show obj private : ", obj.count);
 
 ```
 
+Java側ソース
+
 
 ```java
 package nashorn;
@@ -359,7 +363,51 @@ public class bindJavaJS {
 ```
 
 
-### Extensions of Error objects, Error.prototype and Error constructor
+### Errorのオブジェクト、prototype、constructor拡張 (Extensions of Error objects, Error.prototype and Error constructor)
+
+NashornはECMAScriptに定義されているErrorオブジェクト(またはサブタイプ)を独自拡張しています。
+
+|properties|説明|
+|:---|:---|
+|lineNumber  |エラー元の行番号|
+|columnNumber|エラー元の列番号|
+|fileName    |エラー元のファイル名|
+|stack       |スタックトレース文字列|
+
+
+|prototype|説明|
+|:---|:---|
+|.printStackTrace()|エラーが発生した場所からの完全なスタックトレース(Java含む)|
+|.getStackTrace()  |ECMAScriptフレームのスタックとレースをjava.lang.StackTraceElement型の配列で返します。|
+|.dumpStack()      |just like java.lang.Thread.dumpStack()のような動作をします。|
+
+
++ サンプル
+
+```javascript
+
+function func() {
+    throw new Error()
+}
+ 
+function f() {
+    func()
+}
+ 
+try {
+    f()
+} catch (e) {
+    print('stack       :', e.stack)
+    print('lineNumber  :', e.lineNumber)
+    print('columnNumber:', e.columnNumber)
+    print('fileName    :', e.fileName)
+
+    print('printStackTrace', e.printStackTrace());
+    print('getStackTrace', e.getStackTrace());
+}
+```
+
+
 
 ### String.prototype extensions
 
