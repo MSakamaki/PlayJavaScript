@@ -1,11 +1,10 @@
+// githubからソースを取得するのにSSL通信しないといけないので、以下のように-Dオプション指定
+// jjs -Dhttps.protocols="TLSv1,SSLv3,SSLv2Hello" globalObj.js
 
 print('__FILE__', __FILE__)
 print('__LINE__', __LINE__)
 print('__DIR__ ', __DIR__)
 
-
-// githubからソースを取得するのにSSL通信しないといけないので、以下のように-Dオプション指定
-// jjs -Dhttps.protocols="TLSv1,SSLv3,SSLv2Hello" globalObj.js
 print("load local  file");
 load("hello.js");
 print("load server file");

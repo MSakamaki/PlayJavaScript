@@ -465,10 +465,10 @@ try{
 |``__LINE__``|properties|実行された現在の行数を取得します|
 |``__DIR__`` |properties|実行されたファイルの絶対パスを返します|
 |``print()`` |function  |標準出力ストリームに引数の文字を書き出す。|
-|``load()``  |function  |ファイル、urlからscriptをロードします。|
-|````|||
-|````|||
-|````|||
+|``load()``  |function  |ファイル、urlからscript部品をロードします。|
+|``loadWithNewGlobal()``|function  |globalオブジェクトにscript部品をロードします。|
+|``exit()``  |function  |現在のプロセスを終了します。|
+|``quit()``  |function  |現在のプロセスを終了します。|
 |````|||
 |````|||
 |````|||
