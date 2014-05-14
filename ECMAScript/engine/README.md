@@ -48,3 +48,11 @@ make [cpu]
  
 ## SpiderMonkey
 
+##### ソースコードの取得
+
+```
+git clone https://github.com/mozilla/gecko-dev.git
+cd mozilla-central/js/src
+```
+
+
