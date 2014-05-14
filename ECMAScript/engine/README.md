@@ -55,4 +55,15 @@ git clone https://github.com/mozilla/gecko-dev.git
 cd mozilla-central/js/src
 ```
 
+##### ビルド
+
+```
+cd js/src
+autoconf2.13
+
+mkdir build-release
+cd build-release
+../configure
+make
+```
 
