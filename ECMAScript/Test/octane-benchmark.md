@@ -1,6 +1,8 @@
 # Octane benchmark
 
 ### v8 run.js
+
+```
 Richards: 20931
 DeltaBlue: 27049
 Crypto: 16520
@@ -20,8 +22,11 @@ zlib: 28898
 Typescript: 13426
 ----
 Score (version 9): 14937
+```
 
 ### SpiderMonkey run.js
+
+```
 Richards: 14446
 DeltaBlue: 17098
 Crypto: 15937
@@ -39,6 +44,7 @@ CodeLoad: 8693
 Box2D: 11066
 zlib: 44256
 Typescript: 11994
+```
 
 ### Nashorn run.js
 
