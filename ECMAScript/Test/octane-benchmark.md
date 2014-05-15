@@ -65,6 +65,13 @@ Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler i
 
 oops...
 
+##### ``OutOfMemoryError``が起きないよう、オプションをつけて再度実行してみる。
+
+```
+jjs -J-XX:-UseGCOverheadLimit run.js
+```
+
+
 ### Rhino run.js
 
 
