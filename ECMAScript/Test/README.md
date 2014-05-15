@@ -14,21 +14,33 @@
  
  + Webkit base
 
-##### GetCode
+##### Get Code
  
 ```
-svn checkout http://sunspider-mod.googlecode.com/svn/trunk/ sunspider-mod-read-only 
+svn checkout http://sunspider-mod.googlecode.com/svn/trunk/ sunspider
 ```
 
 ##### exec
 
 ```
-perl sunspider --shell=[javascript engine]
+perl sunspider/sunspider --shell=[javascript engine]
 ```
 
-#### Octane
+#### [Octane](https://code.google.com/p/octane-benchmark/)
 
 + Google
+ 
+##### Get Code
+
+```
+svn checkout http://octane-benchmark.googlecode.com/svn/trunk/ octane
+```
+
+##### exec
+
+```
+[javascript Engine] ./octane/run.js
+```
 
 #### kraken
 
