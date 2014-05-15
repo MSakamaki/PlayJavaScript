@@ -69,8 +69,50 @@ oops...
 
 ```
 jjs -J-XX:-UseGCOverheadLimit -J-Xmx512m run.js
+Richards: 298
+DeltaBlue: 35.9
+Crypto: 55.0
+RayTrace: 109
+EarleyBoyer: 343
+RegExp: 36.3
+Splay: java.lang.OutOfMemoryError: Java heap space
+
+eException in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at java.lang.invoke.MethodType$ConcurrentWeakInternSet.get(MethodType.java:1074)
+        at java.lang.invoke.MethodType.makeImpl(MethodType.java:301)
+        at java.lang.invoke.MethodType.methodType(MethodType.java:206)
+        at java.lang.invoke.LambdaForm.signatureType(LambdaForm.java:363)
+        at java.lang.invoke.LambdaForm.getPreparedForm(LambdaForm.java:524)
+        at java.lang.invoke.LambdaForm.prepare(LambdaForm.java:441)
+        at java.lang.invoke.MethodHandle.<init>(MethodHandle.java:463)
+        at java.lang.invoke.SimpleMethodHandle.<init>(SimpleMethodHandle.java:39)
+        at java.lang.invoke.SimpleMethodHandle.make(SimpleMethodHandle.java:43)
+        at java.lang.invoke.MethodHandleImpl.makeGuardWithTest(MethodHandleImpl.java:620)
+        at java.lang.invoke.MethodHandles.guardWithTest(MethodHandles.java:2758)
+        at java.lang.invoke.SwitchPoint.guardWithTest(SwitchPoint.java:173)
+        at jdk.internal.dynalink.linker.GuardedInvocation.compose(GuardedInvocation.java:306)
+        at jdk.internal.dynalink.ChainedCallSite.relinkInternal(ChainedCallSite.java:168)
+        at jdk.internal.dynalink.ChainedCallSite.relink(ChainedCallSite.java:130)
+        at jdk.nashorn.internal.runtime.linker.LinkerCallSite.relink(LinkerCallSite.java:112)
+        at jdk.internal.dynalink.DynamicLinker.relink(DynamicLinker.java:259)
+        at java.lang.invoke.LambdaForm$DMH/985655350.invokeSpecial_LLIL_L(LambdaForm$DMH)
+        at java.lang.invoke.LambdaForm$BMH/1881129850.reinvoke(LambdaForm$BMH)
+        at java.lang.invoke.LambdaForm$NamedFunction.invoke_L_L(LambdaForm.java:1103)
+        at java.lang.invoke.LambdaForm$DMH/930990596.invokeStatic_LL_L(LambdaForm$DMH)
+        at java.lang.invoke.LambdaForm$NamedFunction.invokeWithArguments(LambdaForm.java:1147)
+        at java.lang.invoke.LambdaForm.interpretName(LambdaForm.java:625)
+        at java.lang.invoke.LambdaForm.interpretWithArguments(LambdaForm.java:604)
+        at java.lang.invoke.LambdaForm$LFI/485815673.interpret_L(LambdaForm$LFI)
+        at java.lang.invoke.LambdaForm$NamedFunction.invoke_L_L(LambdaForm.java:1103)
+        at java.lang.invoke.LambdaForm$DMH/930990596.invokeStatic_LL_L(LambdaForm$DMH)
+        at java.lang.invoke.LambdaForm$NamedFunction.invokeWithArguments(LambdaForm.java:1147)
+        at java.lang.invoke.LambdaForm.interpretName(LambdaForm.java:625)
+        at java.lang.invoke.LambdaForm.interpretWithArguments(LambdaForm.java:604)
+        at java.lang.invoke.LambdaForm$LFI/485815673.interpret_L(LambdaForm$LFI)
+        at java.lang.invoke.LambdaForm$MH/399534175.linkToCallSite(LambdaForm$MH)
 ```
 
+・・・・
 
 ### Rhino run.js
 
