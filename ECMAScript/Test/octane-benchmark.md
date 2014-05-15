@@ -44,6 +44,8 @@ CodeLoad: 8693
 Box2D: 11066
 zlib: 44256
 Typescript: 11994
+----
+Score (version 9): 12095
 ```
 
 ### Nashorn run.js
