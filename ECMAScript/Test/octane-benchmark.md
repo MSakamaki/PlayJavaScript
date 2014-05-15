@@ -116,4 +116,24 @@ eException in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 ### Rhino run.js
 
+```
+js run.js
+js: "pdfjs.js", line 1317: Property "data" already defined in this object literal.
+js:     },
+js: ....^
+Richards: 419
+DeltaBlue: 317
+Crypto: 400
+RayTrace: 570
+EarleyBoyer: 597
+RegExp: 118
+Splay: 752
+SplayLatency: 540
+NavierStokes: 445
+Gameboy: TypedArrayUnsupported
+CodeLoad: 1226
+Box2D: 453
+zlib: ReferenceError: "read" is not defined.
+Typescript: 1632
+```
 
