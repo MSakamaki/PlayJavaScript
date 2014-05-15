@@ -50,6 +50,20 @@ Score (version 9): 12095
 
 ### Nashorn run.js
 
+```
+js-Nashorn  run.js
+Richards: 227
+DeltaBlue: 31.9
+Crypto: 46.0
+RayTrace: 125
+EarleyBoyer: 328
+RegExp: 31.6
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+
+Exception: java.lang.OutOfMemoryError thrown from the UncaughtExceptionHandler in thread "main"
+```
+
+oops...
 
 ### Rhino run.js
 
