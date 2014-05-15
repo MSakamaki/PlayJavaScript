@@ -45,3 +45,17 @@ svn checkout http://octane-benchmark.googlecode.com/svn/trunk/ octane
 #### kraken
 
  + Mozilla
+
+##### Get Code
+
+```
+hg clone http://hg.mozilla.org/projects/kraken/
+```
+
+##### exec
+
+```
+cd kraken
+perl ./sunspider --shell=[javascript engine]
+```
+
