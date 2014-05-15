@@ -1,19 +1,21 @@
 # Java Script Engines
 
-## v8
+## 事前準備とか
 
-### [Building](https://code.google.com/p/v8/wiki/BuildingWithGYP)
-
-#### 事前準備とか
-
-##### 事前準備
+### 事前準備/前提
 
 以下とかインストール
 
+ + Ubuntu OS
  + Python 
  + Ptyhon-setuptools
  + g++
  + git
+
+
+## v8
+
+### [Building](https://code.google.com/p/v8/wiki/BuildingWithGYP)
 
 ##### gpyをインストール
  
@@ -40,6 +42,11 @@ make [cpu]
   + x64
   + arm
 
+##### 実行
+
+```
+./out/x64.release/d8 [javascript file]
+```
 
 ## [Nashorn]()
 
