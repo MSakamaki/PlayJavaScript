@@ -13,11 +13,18 @@
 ####  [Sunspider](https://code.google.com/p/sunspider-mod/)
  
  + Webkit base
+
+##### GetCode
  
 ```
 svn checkout http://sunspider-mod.googlecode.com/svn/trunk/ sunspider-mod-read-only 
 ```
 
+##### exec
+
+```
+perl sunspider --shell=[javascript engine]
+```
 
 #### Octane
 
