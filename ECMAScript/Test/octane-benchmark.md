@@ -68,7 +68,7 @@ oops...
 ##### ``OutOfMemoryError``が起きないよう、オプションをつけて再度実行してみる。
 
 ```
-jjs -J-XX:-UseGCOverheadLimit run.js
+jjs -J-XX:-UseGCOverheadLimit -J-Xmx512m run.js
 ```
 
 
