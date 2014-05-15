@@ -46,7 +46,7 @@ make [cpu]
  + 
  
  
-## SpiderMonkey
+## [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Build_Documentation)
 
 ##### ソースコードの取得
 
@@ -67,3 +67,8 @@ cd build-release
 make
 ```
 
+##### 実行
+
+```
+dist/bin/js [javascript file]
+```
