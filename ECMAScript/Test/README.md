@@ -42,7 +42,7 @@ svn checkout http://octane-benchmark.googlecode.com/svn/trunk/ octane
 [javascript Engine] ./octane/run.js
 ```
 
-#### kraken
+#### [kraken](https://wiki.mozilla.org/Kraken)
 
  + Mozilla
 
