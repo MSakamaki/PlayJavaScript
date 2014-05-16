@@ -137,3 +137,23 @@ zlib: ReferenceError: "read" is not defined.
 Typescript: 1632
 ```
 
+##### pddfjs.jsとzlib、Gameboyで計測できないのでコメントアウト
+
+```
+js run.js 
+Richards: 425
+DeltaBlue: 372
+Crypto: 407
+RayTrace: 648
+EarleyBoyer: 604
+RegExp: 125
+Splay: 565
+SplayLatency: 649
+NavierStokes: 505
+CodeLoad: 2828
+Box2D: 573
+Typescript: 1686
+----
+Score (version 9): 584
+```
+
