@@ -114,6 +114,30 @@ eException in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 ・・・・
 
+
+##### 原因取り除いて再実効
+
+```
+jjs -J-XX:-UseGCOverheadLimit -J-Xmx1g run.js
+Richards: 419
+DeltaBlue: 51.7
+Crypto: 264
+RayTrace: 218
+EarleyBoyer: 758
+RegExp: 138
+NavierStokes: 721
+PdfJS: 251
+Mandreel: 74.5
+MandreelLatency: 198
+Gameboy: 290
+CodeLoad: 57.3
+Box2D: 92.1
+Typescript: 58.5
+----
+Score (version 9): 178
+
+```
+
 ### Rhino run.js
 
 ```
